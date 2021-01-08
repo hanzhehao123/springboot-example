@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css"/>
+
+    <title>学生信息列表</title>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-info">
+                <!-- Default panel contents -->
+                <div class="panel-heading">实训管理系统</div>
+                <div class="panel-body">
+                    <div class="alert alert-warning" role="alert">
+                        学生信息管理系统。你可对学生信息进行删除/修改！ 或 <a href="add" class="btn"> 添加学生信息</a>
+                    </div>
+                </div>
+
+                <!-- Table -->
+                <table class="table">
+                    <tr>
+                        <th> 学号</th>
+                        <th> 姓名</th>
+                        <th> 用户名</th>
+                        <th> 性别</th>
+                        <th> 学院</th>
+                        <th> 班级</th>
+                        <th> 邮箱</th>
+                        <th> 手机</th>
+                        <th> 地址</th>
+                        <th> 头像</th>
+                        <th> 操作</th>
+                    </tr>
+                    </tr>
+                    <tr th:each="Student: ${lists}">
+                        <td th:text = "${Student.student_id}"></td>
+                        <td th:text = "${Student.student_name}"></td>
+                        <td th:text = "${Student.student_username}"></td>
+                        <td th:text = "${Student.sex}?'男':'女'"></td>
+                        <td th:text = "${Student.college}"></td>
+                        <td th:text = "${Student.student_class}"></td>
+                        <td th:text = "${Student.student_email}"></td>
+                        <td th:text = "${Student.student_phone}"></td>
+                        <td th:text = "${Student.student_address}"></td>
+                        <td th:href = "${Student.student_img}">查看头像</td>
+                        <td>
+                            <a th:href="@{'delStu/'+${Student.student_id}}" title="删除"> 删除</a> |
+                            <a th:href="@{'update/'+${Student.student_id}}"> 修改 </a>
+                        </td>
+                    </tr>
+                    
+                </table>
+            </div>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>

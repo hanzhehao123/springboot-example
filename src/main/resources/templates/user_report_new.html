@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>实训管理平台</title>
+    <link rel="stylesheet" href="/vendor/simple-line-icons/css/simple-line-icons.css">
+    <link rel="stylesheet" href="/vendor/font-awesome/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link href="/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css"/>
+</head>
+<body class="sidebar-fixed header-fixed">
+<label class="page-wrapper">
+    <nav class="navbar page-header" style="margin-top: 0">
+        <a href="#" class="btn btn-link sidebar-mobile-toggle d-md-none mr-auto">
+            <i class="fa fa-bars"></i>
+        </a>
+
+        <a class="navbar-brand" href="#"  style="padding: 0">
+            <img src="https://www.whu.edu.cn/ch_template/img/logo.png" width="122" height="38" alt="logo">
+        </a>
+
+        <a href="#" class="btn btn-link sidebar-toggle d-md-down-none">
+            <i class="fa fa-bars"></i>
+        </a>
+
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item d-md-down-none">
+                <a href="#">
+                    <i class="fa fa-bell"></i>
+                    <span class="badge badge-pill badge-danger"></span>
+                </a>
+            </li>
+
+            <li class="nav-item d-md-down-none">
+                <a href="#">
+                    <i class="fa fa-envelope-open"></i>
+                    <span class="badge badge-pill badge-danger"></span>
+                </a>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img th:src="'http://localhost:8080/pics/upload/'+${session.stu.student_img}" class="avatar avatar-sm" alt="logo">
+                    <span class="small ml-1 d-md-down-none">
+                        <label th:text="${session.stu.student_name}"></label>
+
+                        </span>
+                </a>
+
+                <div class="dropdown-menu dropdown-menu-right">
+
+                    <a href="#" class="dropdown-item">
+                        <i class="fa fa-wrench"></i> 设置
+                    </a>
+
+                    <a href="#" class="dropdown-item">
+                        <i class="fa fa-lock"></i> 退出
+                    </a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="main-container">
+        <div class="sidebar">
+            <nav class="sidebar-nav">
+                <ul class="nav">
+                    <li class="nav-title">导航</li>
+
+                    <li class="nav-item">
+                        <a href="/usr/homepage" class="nav-link">
+                            <i class="icon icon-speedometer"></i> 首页
+                        </a>
+                    </li>
+
+                    <li class="nav-item nav-dropdown">
+                        <a href="#" class="nav-link nav-dropdown-toggle">
+                            <i class="icon icon-target"></i> 寻找一个团队 <i class="fa fa-caret-left"></i>
+                        </a>
+
+                        <ul class="nav-dropdown-items">
+                            <li class="nav-item">
+                                <a href="/usr/project_info" class="nav-link">
+                                    <i class="icon icon-grid"></i> 浏览项目列表
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="/usr/team_info" class="nav-link">
+                                    <i class="icon icon-grid"></i> 浏览小组列表
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item nav-dropdown">
+                        <a href="#" class="nav-link nav-dropdown-toggle">
+                            <i class="icon icon-diamond"></i> 我的实训 <i class="fa fa-caret-left"></i>
+                        </a>
+
+                        <ul class="nav-dropdown-items">
+                            <li class="nav-item">
+                                <a href="/usr/my_project" class="nav-link">
+                                    <i class="icon icon-puzzle"></i> 我的项目/小组
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="/usr/my_grade" class="nav-link">
+                                    <i class="icon icon-puzzle"></i> 我的成绩
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item nav-dropdown">
+                        <a href="#" class="nav-link nav-dropdown-toggle">
+                            <i class="icon icon-notebook"></i> 我的日志/周志 <i class="fa fa-caret-left"></i>
+                        </a>
+
+                        <ul class="nav-dropdown-items">
+                            <li class="nav-item">
+                                <a href="/usr/report" class="nav-link">
+                                    <i class="icon icon-notebook"></i> 过往日志/周志
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="/usr/report_new" class="nav-link active">
+                                    <i class="icon icon-note"></i> 提交日志
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item nav-dropdown">
+                        <a href="#" class="nav-link nav-dropdown-toggle">
+                            <i class="icon icon-support"></i> 账户管理 <i class="fa fa-caret-left"></i>
+                        </a>
+
+                        <ul class="nav-dropdown-items">
+                            <li class="nav-item">
+                                <a href="/usr/manage_userdata" class="nav-link">
+                                    <i class="icon icon-note"></i> 个人资料
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="/usr/manage_password" class="nav-link">
+                                    <i class="icon icon-note"></i> 修改密码
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="/usr/manage_logout" class="nav-link">
+                                    <i class="icon icon-home"></i> 注销
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+
+                    <li class="nav-title">More</li>
+
+                    <li class="nav-item nav-dropdown">
+                        <a href="#" class="nav-link nav-dropdown-toggle">
+                            <i class="icon icon-umbrella"></i> Pages <i class="fa fa-caret-left"></i>
+                        </a>
+
+                        <ul class="nav-dropdown-items">
+                            <li class="nav-item">
+                                <a href="/adm/homepage" class="nav-link">
+                                    <i class="icon icon-umbrella"></i> 管理员页面
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="login" class="nav-link">
+                                    <i class="icon icon-umbrella"></i> Login
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="register" class="nav-link">
+                                    <i class="icon icon-umbrella"></i> Register
+                                </a>
+                            </li>
+
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="content">
+            <div class="panel panel-info" style="margin-left: 20%;margin-right: 20%">
+                <div class="panel-heading">
+                    提交日志
+                </div>
+                <div class="panel-body">
+                    <form action="/usr/report_new" method="post" class="form-horizontal">
+
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label"><label style="color: red">*</label>日志类型：</label>
+                            <div class="col-sm-5">
+                                <label class="radio-inline">
+                                    <input type="radio" name="report_type" id="inlineRadio1" value="日志"> 日志
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="report_type" id="inlineRadio2" value="周志"> 周志
+                                </label>
+                                </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label"><label style="color: red">*</label>团队项目：</label>
+                            <div class="col-sm-5">
+                                <input type="text" name="report_project_name" th:value="${team.team_project}" class="form-control" readonly><br/></div>
+                        </div>
+
+                        <div class="hidden">
+                            <label class="col-sm-4 control-label"><label style="color: red">*</label>提交日期：</label>
+                            <div class="col-sm-5">
+                                <input type="date" name="report_date" id="bt" class="hidden"><br/></div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label"><label style="color: red">*</label>日志/周志标题：</label>
+                            <div class="col-sm-5">
+                                <input type="text" name="report_title" class="form-control"><br/></div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label"><label style="color: red">*</label>日志/周志内容：</label>
+                            <div class="col-sm-5">
+                                <textarea type="text" name="report_content" class="form-control" rows="8"></textarea><br/></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label"></label>
+                            <div class="col-sm-5">
+                                <input type="submit" value="提交日志/周志" class="btn btn-info">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+
+
+
+
+        </div>
+    </div>
+    </div>
+    <script src="/vendor/jquery/jquery.min.js"></script>
+    <script src="/vendor/popper.js/popper.min.js"></script>
+    <script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/vendor/chart.js/chart.min.js"></script>
+    <script src="/js/carbon.js"></script>
+    <script src="/js/demo.js"></script>
+</body>
+</html>
+<script>
+    var ddd = new Date();
+    var day =ddd.getDate();
+
+    if(ddd.getMonth()<10){
+        var month = "0"+(ddd.getMonth()+1);
+    }
+
+    if(ddd.getDate()<10){
+        day = "0"+ddd.getDate();
+    }
+
+    var datew = ddd.getFullYear()+"-"+month+"-"+day;
+    var datew = datew.toString();
+
+    $("#bt").val(datew);
+
+</script>

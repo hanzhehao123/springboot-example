@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="/css/bootstrap.css" rel="stylesheet" type="text/css"/>
+
+    <title>Document</title>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-primary">
+                <!-- Default panel contents -->
+                <div class="panel-heading">Spring Boot CRUD 实例练习！2019-04-23</div>
+                <div class="panel-body">
+                    <div class="alert alert-success" role="alert">
+                        学生信息管理系统。你可对学生信息进行删除/修改！ 或 <a href="add" class="btn"> 添加学生信息</a>
+                    </div>
+                </div>
+
+                <!-- Table -->
+                <table class="table">
+                    <tr>
+                        <th> 编号</th>
+                        <th> 用户名</th>
+                        <th> 性别</th>
+                        <th> 出生日期</th>
+                        <th> 学历</th>
+                        <th> 兴趣爱好</th>
+                        <th> 幸运色</th>
+                        <th> 幸运数字</th>
+                        <th> 电子邮箱</th>
+                        <th> 操作</th>
+                    </tr>
+                    </tr>
+                    <tr th:each="Student: ${lists}">
+                        <td th:text = "${Student.stuid}"></td>
+                        <td th:text = "${Student.stu_name}"></td>
+                        <td th:text = "${Student.str_address}"></td>
+                        <td th:text = "${Student.stu_email}"></td>
+                        <td th:text = "${Student.stu_phone}"></td>
+                        <td th:text = "${Student.stu_education}"></td>
+                        <td>
+                            <div style="background-color: red"> Red</div>
+                        </td>
+                        <td><span class="badge">23</span></td>
+                        <td> Jordan@NBA.com</td>
+                        <td>
+                            <a th:href="@{'delStu/'+${Student.stuid}}" title="删除"> 删除</a> |
+                            <a th:href="@{'update/'+${Student.stuid}}"> 修改 </a>
+                        </td>
+
+
+
+
+                    </tr>
+                    <tr>
+                        <td> 1001</td>
+                        <td> Jordan</td>
+                        <td> Man</td>
+                        <td> 1967</td>
+                        <td> 本科</td>
+                        <td> 篮球</td>
+                        <td>
+                            <div style="background-color: red"> Red</div>
+                        </td>
+                        <td><span class="badge">23</span></td>
+                        <td> Jordan@NBA.com</td>
+                        <td> 删除 | 修改</td>
+                    </tr>
+                    <tr>
+                        <td> 1001</td>
+                        <td> Jordan</td>
+                        <td> Man</td>
+                        <td> 1967</td>
+                        <td> 本科</td>
+                        <td> 篮球</td>
+                        <td>
+                            <div style="background-color: red"> Red</div>
+                        </td>
+                        <td><span class="badge">23</span></td>
+                        <td> Jordan@NBA.com</td>
+                        <td> 删除 | 修改</td>
+                    </tr>
+                    <tr>
+                        <td> 1001</td>
+                        <td> Jordan</td>
+                        <td> Man</td>
+                        <td> 1967</td>
+                        <td> 本科</td>
+                        <td> 篮球</td>
+                        <td>
+                            <div style="background-color: red"> Red</div>
+                        </td>
+                        <td><span class="badge">23</span></td>
+                        <td> Jordan@NBA.com</td>
+                        <td>
+                            <a href="#"> 删除</a> |
+                            <a href="#"> 修改 </a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>

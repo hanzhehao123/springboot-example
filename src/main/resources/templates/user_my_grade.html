@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>实训管理平台</title>
+    <link rel="stylesheet" href="/vendor/simple-line-icons/css/simple-line-icons.css">
+    <link rel="stylesheet" href="/vendor/font-awesome/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link href="/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css"/>
+</head>
+<body class="sidebar-fixed header-fixed">
+<div class="page-wrapper">
+    <nav class="navbar page-header" style="margin-top: 0">
+        <a href="#" class="btn btn-link sidebar-mobile-toggle d-md-none mr-auto">
+            <i class="fa fa-bars"></i>
+        </a>
+
+        <a class="navbar-brand" href="#"  style="padding: 0">
+            <img src="https://www.whu.edu.cn/ch_template/img/logo.png" width="122" height="38" alt="logo">
+        </a>
+
+        <a href="#" class="btn btn-link sidebar-toggle d-md-down-none">
+            <i class="fa fa-bars"></i>
+        </a>
+
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item d-md-down-none">
+                <a href="#">
+                    <i class="fa fa-bell"></i>
+                    <span class="badge badge-pill badge-danger"></span>
+                </a>
+            </li>
+
+            <li class="nav-item d-md-down-none">
+                <a href="#">
+                    <i class="fa fa-envelope-open"></i>
+                    <span class="badge badge-pill badge-danger"></span>
+                </a>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img th:src="'http://localhost:8080/pics/upload/'+${session.stu.student_img}" class="avatar avatar-sm" alt="logo">
+                    <span class="small ml-1 d-md-down-none"><label th:text="${session.stu.student_name}"></label></span>
+                </a>
+
+                <div class="dropdown-menu dropdown-menu-right">
+
+                    <a href="#" class="dropdown-item">
+                        <i class="fa fa-wrench"></i> 设置
+                    </a>
+
+                    <a href="#" class="dropdown-item">
+                        <i class="fa fa-lock"></i> 退出
+                    </a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="main-container">
+        <div class="sidebar">
+            <nav class="sidebar-nav">
+                <ul class="nav">
+                    <li class="nav-title">导航</li>
+
+                    <li class="nav-item">
+                        <a href="/usr/homepage" class="nav-link">
+                            <i class="icon icon-speedometer"></i> 首页
+                        </a>
+                    </li>
+
+                    <li class="nav-item nav-dropdown">
+                        <a href="#" class="nav-link nav-dropdown-toggle">
+                            <i class="icon icon-target"></i> 寻找一个团队 <i class="fa fa-caret-left"></i>
+                        </a>
+
+                        <ul class="nav-dropdown-items">
+                            <li class="nav-item">
+                                <a href="/usr/project_info" class="nav-link">
+                                    <i class="icon icon-grid"></i> 浏览项目列表
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="/usr/team_info" class="nav-link">
+                                    <i class="icon icon-grid"></i> 浏览小组列表
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item nav-dropdown">
+                        <a href="#" class="nav-link nav-dropdown-toggle">
+                            <i class="icon icon-diamond"></i> 我的实训 <i class="fa fa-caret-left"></i>
+                        </a>
+
+                        <ul class="nav-dropdown-items">
+                            <li class="nav-item">
+                                <a href="/usr/my_project" class="nav-link">
+                                    <i class="icon icon-puzzle"></i> 我的项目/小组
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="/usr/my_grade" class="nav-link active">
+                                    <i class="icon icon-puzzle"></i> 我的成绩
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item nav-dropdown">
+                        <a href="#" class="nav-link nav-dropdown-toggle">
+                            <i class="icon icon-notebook"></i> 我的日志/周志 <i class="fa fa-caret-left"></i>
+                        </a>
+
+                        <ul class="nav-dropdown-items">
+                            <li class="nav-item">
+                                <a href="/usr/report" class="nav-link">
+                                    <i class="icon icon-notebook"></i> 过往日志/周志
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="/usr/report_new" class="nav-link">
+                                    <i class="icon icon-note"></i> 提交日志
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item nav-dropdown">
+                        <a href="#" class="nav-link nav-dropdown-toggle">
+                            <i class="icon icon-support"></i> 账户管理 <i class="fa fa-caret-left"></i>
+                        </a>
+
+                        <ul class="nav-dropdown-items">
+                            <li class="nav-item">
+                                <a href="/usr/manage_userdata" class="nav-link">
+                                    <i class="icon icon-note"></i> 个人资料
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="/usr/manage_password" class="nav-link">
+                                    <i class="icon icon-note"></i> 修改密码
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="/usr/manage_logout" class="nav-link">
+                                    <i class="icon icon-home"></i> 注销
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+
+                    <li class="nav-title">More</li>
+
+                    <li class="nav-item nav-dropdown">
+                        <a href="#" class="nav-link nav-dropdown-toggle">
+                            <i class="icon icon-umbrella"></i> Pages <i class="fa fa-caret-left"></i>
+                        </a>
+
+                        <ul class="nav-dropdown-items">
+
+                            <li class="nav-item">
+                                <a href="login" class="nav-link">
+                                    <i class="icon icon-umbrella"></i> Login
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="register" class="nav-link">
+                                    <i class="icon icon-umbrella"></i> Register
+                                </a>
+                            </li>
+
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="content">
+            <div class="panel panel-info" style="margin-left: 20%;margin-right: 20%">
+                <div class="panel-heading">
+                    我的成绩信息      <small ><a href="/usr/my_grade_old" class="pull-right">历史成绩</a></small>
+                </div>
+                <div class="panel-body">
+                    <div class="form-group">
+                        <label class="text-right col-sm-4 control-label">团队编号：</label>
+                        <label type="number" name="team_id" th:text="${team.team_id}" class="col-sm-5 control-label"></label><br/>
+                    </div>
+                    <div class="form-group">
+                        <label class="text-right col-sm-4 control-label">团队名称：</label>
+                        <label type="text" name="team_name" th:text="${team.team_name}" class="col-sm-5 control-label"></label><br/>
+                    </div>
+                    <div class="form-group">
+                        <label class="text-right col-sm-4 control-label">团队项目：</label>
+                        <label type="text" name="team_project" th:text="${team.team_project}" class="col-sm-5 control-label"></label><br/>
+                    </div>
+                    <div class="form-group">
+                        <label class="text-right col-sm-4 control-label">项目进度%：</label>
+                        <label type="number" name="team_progress" th:text="${team.team_progress}" class="col-sm-5 control-label"></label><br/>
+                    </div>
+                    <div class="form-group">
+                        <label class="text-right col-sm-4 control-label">成绩1：</label>
+                        <label type="number" name="team_grade1" th:text="${team.team_grade1}" class="col-sm-5 control-label"></label><br/>
+                    </div>
+                    <div class="form-group">
+                        <label class="text-right col-sm-4 control-label">成绩2：</label>
+                        <label type="number" name="team_grade2" th:text="${team.team_grade2}" class="col-sm-5 control-label"></label><br/>
+                    </div>
+                    <div class="form-group">
+                        <label class="text-right col-sm-4 control-label">成绩3：</label>
+                        <label type="number" name="team_grade3" th:text="${team.team_grade3}" class="col-sm-5 control-label"></label><br/>
+                    </div>
+                    <div class="form-group">
+                        <label class="text-right col-sm-4 control-label">总成绩：</label>
+                        <label type="number" name="team_grade" th:text="${team.team_grade}" class="col-sm-5 control-label"></label><br/>
+                    </div>
+
+
+                </div>
+            </div>
+
+
+
+
+
+        </div>
+    </div>
+</div>
+<script src="/vendor/jquery/jquery.min.js"></script>
+<script src="/vendor/popper.js/popper.min.js"></script>
+<script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="/vendor/chart.js/chart.min.js"></script>
+<script src="/js/carbon.js"></script>
+<script src="/js/demo.js"></script>
+</body>
+</html>

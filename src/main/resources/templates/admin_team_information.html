@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>实训管理平台</title>
+    <link rel="stylesheet" href="/vendor/simple-line-icons/css/simple-line-icons.css">
+    <link rel="stylesheet" href="/vendor/font-awesome/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link href="/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css"/>
+</head>
+<body class="sidebar-fixed header-fixed">
+<div class="page-wrapper">
+    <nav class="navbar page-header" style="margin-top: 0">
+        <a href="#" class="btn btn-link sidebar-mobile-toggle d-md-none mr-auto">
+            <i class="fa fa-bars"></i>
+        </a>
+
+        <a class="navbar-brand" href="#" style="padding: 0">
+            <img src="https://www.whu.edu.cn/ch_template/img/logo.png" width="122" height="38" alt="logo">
+        </a>
+
+        <a href="#" class="btn btn-link sidebar-toggle d-md-down-none">
+            <i class="fa fa-bars"></i>
+        </a>
+
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item d-md-down-none">
+                <a href="#">
+                    <i class="fa fa-bell"></i>
+                    <span class="badge badge-pill badge-danger"></span>
+                </a>
+            </li>
+
+            <li class="nav-item d-md-down-none">
+                <a href="#">
+                    <i class="fa fa-envelope-open"></i>
+                    <span class="badge badge-pill badge-danger"></span>
+                </a>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img src="/imgs/avatar-1.png" class="avatar avatar-sm" alt="logo">
+                    <span class="small ml-1 d-md-down-none"><label th:text="${session.adm.admin_username}"></label></span>
+                </a>
+
+                <div class="dropdown-menu dropdown-menu-right">
+
+                    <a href="#" class="dropdown-item">
+                        <i class="fa fa-wrench"></i> 设置
+                    </a>
+
+                    <a href="#" class="dropdown-item">
+                        <i class="fa fa-lock"></i> 退出
+                    </a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="main-container">
+        <div class="sidebar">
+            <nav class="sidebar-nav">
+                <ul class="nav">
+                    <li class="nav-title">导航</li>
+
+                    <li class="nav-item">
+                        <a href="/stu/homepage" class="nav-link">
+                            <i class="icon icon-speedometer"></i> 首页
+                        </a>
+                    </li>
+
+                    <li class="nav-item nav-dropdown">
+                        <a href="#" class="nav-link nav-dropdown-toggle">
+                            <i class="icon icon-energy"></i> 学生信息管理 <i class="fa fa-caret-left"></i>
+                        </a>
+
+                        <ul class="nav-dropdown-items">
+                            <li class="nav-item">
+                                <a href="/stu/student_info" class="nav-link">
+                                    <i class="icon icon-grid"></i> 学生信息表
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="/stu/student_add" class="nav-link">
+                                    <i class="icon icon-grid"></i> 增加学生信息
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item nav-dropdown">
+                        <a href="#" class="nav-link nav-dropdown-toggle">
+                            <i class="icon icon-energy"></i> 项目信息管理 <i class="fa fa-caret-left"></i>
+                        </a>
+
+                        <ul class="nav-dropdown-items">
+                            <li class="nav-item">
+                                <a href="/proj/project_info" class="nav-link">
+                                    <i class="icon icon-grid"></i> 项目信息表
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="/proj/project_add" class="nav-link">
+                                    <i class="icon icon-grid"></i> 增加项目信息
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item nav-dropdown">
+                        <a href="#" class="nav-link nav-dropdown-toggle">
+                            <i class="icon icon-energy"></i> 小组信息管理 <i class="fa fa-caret-left"></i>
+                        </a>
+
+                        <ul class="nav-dropdown-items">
+                            <li class="nav-item">
+                                <a href="/team/team_info" class="nav-link active">
+                                    <i class="icon icon-grid"></i> 小组信息表
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="/team/team_add" class="nav-link">
+                                    <i class="icon icon-grid"></i> 增加小组信息
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item nav-dropdown">
+                        <a href="#" class="nav-link nav-dropdown-toggle">
+                            <i class="icon icon-energy"></i> 日志/周志管理 <i class="fa fa-caret-left"></i>
+                        </a>
+
+                        <ul class="nav-dropdown-items">
+                            <li class="nav-item">
+                                <a href="/rep/report_info" class="nav-link">
+                                    <i class="icon icon-grid"></i> 日志/周志信息表
+                                </a>
+                            </li>
+
+                        </ul>
+                    </li>
+
+                    <li class="nav-item nav-dropdown">
+                        <a href="#" class="nav-link nav-dropdown-toggle">
+                            <i class="icon icon-energy"></i> 管理员信息管理 <i class="fa fa-caret-left"></i>
+                        </a>
+
+                        <ul class="nav-dropdown-items">
+                            <li class="nav-item">
+                                <a href="/adm/admin_info" class="nav-link">
+                                    <i class="icon icon-grid"></i> 管理员信息表
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="/adm/admin_add" class="nav-link">
+                                    <i class="icon icon-grid"></i> 增加管理员信息
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="/adm/admin_password" class="nav-link">
+                                    <i class="icon icon-grid"></i> 修改我的密码
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="/adm/admin_logindata" class="nav-link">
+                                    <i class="icon icon-grid"></i> 登录日志
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-title">More</li>
+
+                    <li class="nav-item nav-dropdown">
+                        <a href="#" class="nav-link nav-dropdown-toggle">
+                            <i class="icon icon-umbrella"></i> Pages <i class="fa fa-caret-left"></i>
+                        </a>
+
+                        <ul class="nav-dropdown-items">
+                            <li class="nav-item">
+                                <a href="blank" class="nav-link">
+                                    <i class="icon icon-umbrella"></i> Blank Page
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="login" class="nav-link">
+                                    <i class="icon icon-umbrella"></i> Login
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="logout" class="nav-link">
+                                    <i class="icon icon-umbrella"></i> Logout
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="404" class="nav-link">
+                                    <i class="icon icon-umbrella"></i> 404
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="500" class="nav-link">
+                                    <i class="icon icon-umbrella"></i> 500
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="settings" class="nav-link">
+                                    <i class="icon icon-umbrella"></i> Settings
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel panel-info">
+                            <!-- Default panel contents -->
+                            <div class="panel-heading">实训管理系统</div>
+                            <div class="panel-body">
+                                <div class="alert alert-warning" role="alert">
+                                    小组团队信息管理系统。你可对小组团队信息进行删除/修改！ 或 <a href="/team/team_add" class="btn"> 添加小组团队信息</a>
+                                </div>
+                            </div>
+
+                            <!-- Table -->
+                            <table class="table">
+                                <tr>
+                                    <th> 团队编号</th>
+                                    <th> 团队名称</th>
+                                    <th> 团队项目</th>
+                                    <th> 组长</th>
+                                    <th> 组员</th>
+                                    <th> 团队介绍</th>
+                                    <th> 项目进度%</th>
+                                    <th> 成绩1</th>
+                                    <th> 成绩2</th>
+                                    <th> 成绩3</th>
+                                    <th> 总成绩</th>
+                                    <th> 操作</th>
+                                </tr>
+                                </tr>
+                                <tr th:each="Team: ${lists.list}">
+                                    <td th:text = "${Team.team_id}"></td>
+                                    <td th:text = "${Team.team_name}"></td>
+                                    <td th:text = "${Team.team_project}"></td>
+                                    <td th:text = "${Team.team_leader}"></td>
+                                    <td th:text = "${Team.team_mate}"></td>
+                                    <td th:text = "${Team.team_intro}"></td>
+                                    <td th:text = "${Team.team_progress}"></td>
+                                    <td th:text = "${Team.team_grade1}"></td>
+                                    <td th:text = "${Team.team_grade2}"></td>
+                                    <td th:text = "${Team.team_grade3}"></td>
+                                    <td th:text = "${Team.team_grade}"></td>
+                                    <td>
+                                        <a th:href="@{'delTeam/'+${Team.team_id}}" title="删除"> 删除</a> |
+                                        <a th:href="@{'update/'+${Team.team_id}}"> 修改 </a>
+                                    </td>
+                                </tr>
+
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-11">
+                        <ul class="pagination">
+                            <li><a th:href="@{/team/team_info(pageIndex=1,pageSize=6)}">[首  页]</a></li>
+                            <th:block th:each="nav:${lists.navigatepageNums}">
+                                <li th:class="${nav==lists.pageNum}?'active':''">
+                                    <a  th:href="@{'/team/team_info?pageIndex='+${nav}}"
+                                        th:text="${nav}"></a></li>
+                            </th:block>
+                            <li><a th:href="@{/team/team_info(pageIndex=${lists.pageNum-1},pageSize=6)}">[上一页]</a></li>
+                            <li><a th:href="@{/team/team_info(pageIndex=${lists.pageNum+1},pageSize=6)}">[下一页]</a></li>
+                            <li> <a th:href="@{/team/team_info(pageIndex=${lists.pages},pageSize=6)}">[末  页]</a></li>
+                            <li><span th:text="'共'+${lists.pages}+'页'"></span></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+
+
+
+        </div>
+    </div>
+</div>
+<script src="/vendor/jquery/jquery.min.js"></script>
+<script src="/vendor/popper.js/popper.min.js"></script>
+<script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="/vendor/chart.js/chart.min.js"></script>
+<script src="/js/carbon.js"></script>
+<script src="/js/demo.js"></script>
+</body>
+</html>
